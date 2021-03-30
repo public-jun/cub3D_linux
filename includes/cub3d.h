@@ -6,7 +6,7 @@
 /*   By: jnakahod <jnakahod@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/12 12:49:26 by jnakahod          #+#    #+#             */
-/*   Updated: 2021/03/30 12:35:58 by jnakahod         ###   ########.fr       */
+/*   Updated: 2021/03/30 19:53:47 by jnakahod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ void			ft_sprite_casting(t_all *all);
 int				ft_raycasting(t_all *all);
 void			key_action(t_all *all);
 int				key_press(int key, t_all *all);
-int				key_release(int key, t_all *all);
+// int				key_release(int key, t_all *all);
 void			ft_write_bmp(t_all *all);
 void			ft_move_forward(t_all *all);
 void			ft_move_backward(t_all *all);

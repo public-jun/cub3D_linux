@@ -6,7 +6,7 @@
 /*   By: jnakahod <jnakahod@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/24 23:29:56 by jnakahod          #+#    #+#             */
-/*   Updated: 2021/03/30 19:27:11 by jnakahod         ###   ########.fr       */
+/*   Updated: 2021/03/30 19:52:57 by jnakahod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,50 +28,50 @@ void			key_action(t_all *all)
 		ft_turn_left(all);
 	if (all->key.esc)
 		ft_exit(all);
-	// ft_raycasting(all);
+	ft_raycasting(all);
 }
 
-void			key_flag_on(int *key, t_all *all)
-{
-	*key = 1;
-	ft_raycasting(all);
-	// key_action(all);
-}
+// void			key_flag_on(int *key, t_all *all)
+// {
+// 	*key = 1;
+// 	ft_raycasting(all);
+// 	// key_action(all);
+// }
 
 int				key_press(int key, t_all *all)
 {
 	if (key == K_ESC)
 		ft_exit(all);
 	else if (key == K_W)
-		key_flag_on(&all->key.w, all);
+		ft_move_forward(all);
 	else if (key == K_A)
-		key_flag_on(&all->key.a, all);
+		ft_move_left(all);
 	else if (key == K_S)
-		key_flag_on(&all->key.s, all);
+		ft_move_backward(all);
 	else if (key == K_D)
-		key_flag_on(&all->key.d, all);
+		ft_move_right(all);
 	else if (key == K_RIGHT)
-		key_flag_on(&all->key.right, all);
+		ft_turn_right(all);
 	else if (key == K_LEFT)
-		key_flag_on(&all->key.left, all);
+		ft_turn_left(all);
 	return (0);
 }
 
-int				key_release(int key, t_all *all)
-{
-	if (key == K_ESC)
-		ft_exit(all);
-	else if (key == K_W)
-		all->key.w = 0;
-	else if (key == K_A)
-		all->key.a = 0;
-	else if (key == K_S)
-		all->key.s = 0;
-	else if (key == K_D)
-		all->key.d = 0;
-	else if (key == K_RIGHT)
-		all->key.right = 0;
-	else if (key == K_LEFT)
-		all->key.left = 0;
-	return (0);
-}
+// int				key_release(int key, t_all *all)
+// {
+// 	if (key == K_ESC)
+// 		ft_exit(all);
+// 	else if (key == K_W)
+// 		all->key.w = 0;
+// 	else if (key == K_A)
+// 		all->key.a = 0;
+// 	else if (key == K_S)
+// 		all->key.s = 0;
+// 	else if (key == K_D)
+// 		all->key.d = 0;
+// 	else if (key == K_RIGHT)
+// 		all->key.right = 0;
+// 	else if (key == K_LEFT)
+// 		all->key.left = 0;
+// 	return (0);
+// }

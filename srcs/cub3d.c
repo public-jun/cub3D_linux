@@ -6,7 +6,7 @@
 /*   By: jnakahod <jnakahod@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/09 21:03:09 by jnakahod          #+#    #+#             */
-/*   Updated: 2021/03/30 19:06:48 by jnakahod         ###   ########.fr       */
+/*   Updated: 2021/03/30 19:53:33 by jnakahod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ int				main(int ac, char **av)
 		ft_raycasting(&all);
 		// mlx_loop_hook(all.info.mlx, &ft_raycasting, &all);
 		mlx_hook(all.info.win, 2, 1L << 0, &key_press, &all);
-		mlx_hook(all.info.win, 3, 1L << 1, &key_release, &all);
+		// mlx_hook(all.info.win, 3, 1L << 1, &key_release, &all);
 		mlx_hook(all.info.win, 33, 1L << 17, &ft_exit, &all);
 		mlx_loop(all.info.mlx);
 	}
