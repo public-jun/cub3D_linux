@@ -6,37 +6,11 @@
 /*   By: jnakahod <jnakahod@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/24 23:29:56 by jnakahod          #+#    #+#             */
-/*   Updated: 2021/03/30 20:00:19 by jnakahod         ###   ########.fr       */
+/*   Updated: 2021/03/30 20:03:27 by jnakahod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/cub3d.h"
-
-void			key_action(t_all *all)
-{
-	if (all->key.w)
-		ft_move_forward(all);
-	if (all->key.s)
-		ft_move_backward(all);
-	if (all->key.d)
-		ft_move_right(all);
-	if (all->key.a)
-		ft_move_left(all);
-	if (all->key.right)
-		ft_turn_right(all);
-	if (all->key.left)
-		ft_turn_left(all);
-	if (all->key.esc)
-		ft_exit(all);
-	ft_raycasting(all);
-}
-
-// void			key_flag_on(int *key, t_all *all)
-// {
-// 	*key = 1;
-// 	ft_raycasting(all);
-// 	// key_action(all);
-// }
 
 int				key_press(int key, t_all *all)
 {
@@ -54,6 +28,7 @@ int				key_press(int key, t_all *all)
 		ft_turn_right(all);
 	else if (key == K_LEFT)
 		ft_turn_left(all);
+	ft_raycasting(all);
 	return (0);
 }
 

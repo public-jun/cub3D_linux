@@ -6,7 +6,7 @@
 /*   By: jnakahod <jnakahod@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/12 12:49:26 by jnakahod          #+#    #+#             */
-/*   Updated: 2021/03/30 19:58:57 by jnakahod         ###   ########.fr       */
+/*   Updated: 2021/03/30 20:03:19 by jnakahod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,6 @@ void			floor_and_ceilling_casting(t_all *all);
 void			ft_wall_casting(t_all *all);
 void			ft_sprite_casting(t_all *all);
 int				ft_raycasting(t_all *all);
-void			key_action(t_all *all);
 int				key_press(int key, t_all *all);
 // int				key_release(int key, t_all *all);
 void			ft_write_bmp(t_all *all);
