@@ -6,7 +6,7 @@
 /*   By: jnakahod <jnakahod@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/24 23:29:56 by jnakahod          #+#    #+#             */
-/*   Updated: 2021/03/30 19:17:53 by jnakahod         ###   ########.fr       */
+/*   Updated: 2021/03/30 19:27:11 by jnakahod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,13 +28,14 @@ void			key_action(t_all *all)
 		ft_turn_left(all);
 	if (all->key.esc)
 		ft_exit(all);
-	ft_raycasting(all);
+	// ft_raycasting(all);
 }
 
 void			key_flag_on(int *key, t_all *all)
 {
 	*key = 1;
-	key_action(all);
+	ft_raycasting(all);
+	// key_action(all);
 }
 
 int				key_press(int key, t_all *all)
@@ -72,6 +73,5 @@ int				key_release(int key, t_all *all)
 		all->key.right = 0;
 	else if (key == K_LEFT)
 		all->key.left = 0;
-	ft_raycasting(all);
 	return (0);
 }

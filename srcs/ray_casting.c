@@ -6,7 +6,7 @@
 /*   By: jnakahod <jnakahod@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 20:31:33 by jnakahod          #+#    #+#             */
-/*   Updated: 2021/03/30 19:04:28 by jnakahod         ###   ########.fr       */
+/*   Updated: 2021/03/30 19:26:05 by jnakahod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,6 @@ int				ft_raycasting(t_all *all)
 	ft_wall_casting(all);
 	ft_sprite_casting(all);
 	ft_draw_to_window(all);
-	// key_action(all);
+	key_action(all);
 	return (0);
 }
