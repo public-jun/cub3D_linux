@@ -6,7 +6,7 @@
 /*   By: jnakahod <jnakahod@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/24 23:29:56 by jnakahod          #+#    #+#             */
-/*   Updated: 2021/03/30 20:03:27 by jnakahod         ###   ########.fr       */
+/*   Updated: 2021/03/30 20:59:02 by jnakahod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,22 +31,3 @@ int				key_press(int key, t_all *all)
 	ft_raycasting(all);
 	return (0);
 }
-
-// int				key_release(int key, t_all *all)
-// {
-// 	if (key == K_ESC)
-// 		ft_exit(all);
-// 	else if (key == K_W)
-// 		all->key.w = 0;
-// 	else if (key == K_A)
-// 		all->key.a = 0;
-// 	else if (key == K_S)
-// 		all->key.s = 0;
-// 	else if (key == K_D)
-// 		all->key.d = 0;
-// 	else if (key == K_RIGHT)
-// 		all->key.right = 0;
-// 	else if (key == K_LEFT)
-// 		all->key.left = 0;
-// 	return (0);
-// }
