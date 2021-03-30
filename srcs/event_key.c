@@ -6,7 +6,7 @@
 /*   By: jnakahod <jnakahod@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/24 23:29:56 by jnakahod          #+#    #+#             */
-/*   Updated: 2021/03/30 18:05:51 by jnakahod         ###   ########.fr       */
+/*   Updated: 2021/03/30 19:17:53 by jnakahod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,5 +72,6 @@ int				key_release(int key, t_all *all)
 		all->key.right = 0;
 	else if (key == K_LEFT)
 		all->key.left = 0;
+	ft_raycasting(all);
 	return (0);
 }
