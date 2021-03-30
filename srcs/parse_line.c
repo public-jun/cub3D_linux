@@ -6,7 +6,7 @@
 /*   By: jnakahod <jnakahod@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 21:36:53 by jnakahod          #+#    #+#             */
-/*   Updated: 2021/03/30 23:12:28 by jnakahod         ###   ########.fr       */
+/*   Updated: 2021/03/30 23:20:35 by jnakahod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,25 +35,25 @@ int				ft_skip_null_and_space(char **line, int *i)
 
 void			ft_judge_element(t_all *all, char **line, int *i)
 {
-	if ((*line)[i] == 'R' && (*line)[i + 1] == ' ')
+	if ((*line)[*i] == 'R' && (*line)[*i + 1] == ' ')
 		ft_parse_line_r(all, line);
-	else if ((*line)[i] == 'N' && (*line)[i + 1] == 'O'
-		&& (*line)[i + 2] == ' ')
+	else if ((*line)[*i] == 'N' && (*line)[*i + 1] == 'O'
+		&& (*line)[*i + 2] == ' ')
 		ft_parse_line_path(all, &all->path_tex.north, &all->flag.no, line);
-	else if ((*line)[i] == 'S' && (*line)[i + 1] == 'O'
-		&& (*line)[i + 2] == ' ')
+	else if ((*line)[*i] == 'S' && (*line)[*i + 1] == 'O'
+		&& (*line)[*i + 2] == ' ')
 		ft_parse_line_path(all, &all->path_tex.south, &all->flag.so, line);
-	else if ((*line)[i] == 'W' && (*line)[i + 1] == 'E'
-		&& (*line)[i + 2] == ' ')
+	else if ((*line)[*i] == 'W' && (*line)[*i + 1] == 'E'
+		&& (*line)[*i + 2] == ' ')
 		ft_parse_line_path(all, &all->path_tex.west, &all->flag.we, line);
-	else if ((*line)[i] == 'E' && (*line)[i + 1] == 'A'
-		&& (*line)[i + 2] == ' ')
+	else if ((*line)[*i] == 'E' && (*line)[*i + 1] == 'A'
+		&& (*line)[*i + 2] == ' ')
 		ft_parse_line_path(all, &all->path_tex.east, &all->flag.ea, line);
-	else if ((*line)[i] == 'S' && (*line)[i + 1] == ' ')
+	else if ((*line)[*i] == 'S' && (*line)[*i + 1] == ' ')
 		ft_parse_line_path(all, &all->path_tex.sprite, &all->flag.s, line);
-	else if ((*line)[i] == 'F' && (*line)[i + 1] == ' ')
+	else if ((*line)[*i] == 'F' && (*line)[*i + 1] == ' ')
 		ft_parse_line_color(all, &all->color_f, &all->flag.f, line);
-	else if ((*line)[i] == 'C' && (*line)[i + 1] == ' ')
+	else if ((*line)[*i] == 'C' && (*line)[*i + 1] == ' ')
 		ft_parse_line_color(all, &all->color_c, &all->flag.c, line);
 }
 
