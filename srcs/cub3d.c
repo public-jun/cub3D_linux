@@ -6,7 +6,7 @@
 /*   By: jnakahod <jnakahod@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/09 21:03:09 by jnakahod          #+#    #+#             */
-/*   Updated: 2021/03/30 20:59:22 by jnakahod         ###   ########.fr       */
+/*   Updated: 2021/03/31 16:46:53 by jnakahod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,15 @@ static int		ft_iscub(char *cub)
 	return (0);
 }
 
+void			focus_in(t_all *all)
+{
+	floor_and_ceilling_casting(&all);
+	ft_wall_casting(&all);
+	ft_sprite_casting(&all);
+	ft_draw_to_window(&all);
+	return (0);
+}
+
 int				main(int ac, char **av)
 {
 	t_all		all;
@@ -64,12 +73,10 @@ int				main(int ac, char **av)
 		ft_mlx_and_raycast_init(&all);
 		if (ac == 3)
 			ft_write_bmp(&all);
-		floor_and_ceilling_casting(&all);
-		ft_wall_casting(&all);
-		ft_sprite_casting(&all);
-		ft_draw_to_window(&all);
+		focus_in(&all);
 		mlx_hook(all.info.win, 2, 1L << 0, &key_press, &all);
 		mlx_hook(all.info.win, 33, 1L << 17, &ft_exit, &all);
+		mlx_hook(all.info.win, 9, 1 << 21, &focus_in, &all);
 		mlx_loop(all.info.mlx);
 	}
 	ft_put_error_and_exit(&all, NULL, "Invalid comandline arguments\n");
