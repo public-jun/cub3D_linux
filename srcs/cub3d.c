@@ -6,7 +6,7 @@
 /*   By: jnakahod <jnakahod@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/09 21:03:09 by jnakahod          #+#    #+#             */
-/*   Updated: 2021/03/31 16:48:13 by jnakahod         ###   ########.fr       */
+/*   Updated: 2021/03/31 16:49:01 by jnakahod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,10 +47,10 @@ static int		ft_iscub(char *cub)
 
 int			focus_in(t_all *all)
 {
-	floor_and_ceilling_casting(&all);
-	ft_wall_casting(&all);
-	ft_sprite_casting(&all);
-	ft_draw_to_window(&all);
+	floor_and_ceilling_casting(all);
+	ft_wall_casting(all);
+	ft_sprite_casting(all);
+	ft_draw_to_window(all);
 	return (0);
 }
 
