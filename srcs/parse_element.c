@@ -6,7 +6,7 @@
 /*   By: jnakahod <jnakahod@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 21:46:38 by jnakahod          #+#    #+#             */
-/*   Updated: 2021/03/28 20:11:50 by jnakahod         ###   ########.fr       */
+/*   Updated: 2021/04/02 16:18:21 by jnakahod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,9 +59,9 @@ void				ft_parse_line_path(t_all *all, char **path,
 		ft_put_error_and_exit(all, line, "Invalid path format\n");
 	}
 	ft_free_all(tmp);
+	*path = res;
 	if (res[0] != '.' || res[1] != '/')
 		ft_put_error_and_exit(all, line, "Invalid path\n");
-	*path = res;
 	*flag = 1;
 }
 
