@@ -6,7 +6,7 @@
 /*   By: jnakahod <jnakahod@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/09 21:03:09 by jnakahod          #+#    #+#             */
-/*   Updated: 2021/03/31 16:49:01 by jnakahod         ###   ########.fr       */
+/*   Updated: 2021/04/02 18:03:23 by jnakahod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ static int		ft_iscub(char *cub)
 	return (0);
 }
 
-int			focus_in(t_all *all)
+int				focus_in(t_all *all)
 {
 	floor_and_ceilling_casting(all);
 	ft_wall_casting(all);

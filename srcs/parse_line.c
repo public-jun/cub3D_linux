@@ -6,7 +6,7 @@
 /*   By: jnakahod <jnakahod@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 21:36:53 by jnakahod          #+#    #+#             */
-/*   Updated: 2021/04/01 12:14:57 by jnakahod         ###   ########.fr       */
+/*   Updated: 2021/04/02 18:02:41 by jnakahod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,14 @@ void			ft_parse_line_param(t_all *all, char **line)
 	i = 0;
 	if (ft_skip_null_and_space(line, &i) == -1)
 		return ;
-	if ((ft_strncmp((*line + i), "R ", 2)) && (ft_strncmp((*line + i), "NO ", 3)) && (ft_strncmp((*line + i), "SO ", 3)) && (ft_strncmp((*line + i), "WE ", 3)) && (ft_strncmp((*line + i), "EA ", 3)) && (ft_strncmp((*line + i), "S ", 2)) && (ft_strncmp((*line + i), "F ", 2)) && (ft_strncmp((*line + i), "C ", 2)))
+	if ((ft_strncmp((*line + i), "R ", 2))
+		&& (ft_strncmp((*line + i), "NO ", 3))
+		&& (ft_strncmp((*line + i), "SO ", 3))
+		&& (ft_strncmp((*line + i), "WE ", 3))
+		&& (ft_strncmp((*line + i), "EA ", 3))
+		&& (ft_strncmp((*line + i), "S ", 2))
+		&& (ft_strncmp((*line + i), "F ", 2))
+		&& (ft_strncmp((*line + i), "C ", 2)))
 		ft_put_error_and_exit(all, line, "Invalid element\n");
 	ft_judge_element(all, line, &i);
 }
