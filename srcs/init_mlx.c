@@ -6,7 +6,7 @@
 /*   By: jnakahod <jnakahod@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/21 12:21:20 by jnakahod          #+#    #+#             */
-/*   Updated: 2021/03/28 16:38:19 by jnakahod         ###   ########.fr       */
+/*   Updated: 2021/04/03 15:29:59 by jnakahod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,10 +48,13 @@ static void		ft_init_buf(t_all *all, int height, int width)
 
 void			ft_resize_win(t_all *all)
 {
-	if (all->win_r.x > all->win_r.screen_x)
-		all->win_r.x = all->win_r.screen_x;
-	if (all->win_r.y > all->win_r.screen_y)
-		all->win_r.y = all->win_r.screen_y;
+	if (all->save = 0)
+	{
+		if (all->win_r.x > all->win_r.screen_x)
+			all->win_r.x = all->win_r.screen_x;
+		if (all->win_r.y > all->win_r.screen_y)
+			all->win_r.y = all->win_r.screen_y;
+	}
 }
 
 void			ft_init_texture_and_zbuffer(t_all *all)
