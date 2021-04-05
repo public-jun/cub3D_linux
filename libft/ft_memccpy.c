@@ -6,7 +6,7 @@
 /*   By: jnakahod <jnakahod@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/08 15:44:49 by jnakahod          #+#    #+#             */
-/*   Updated: 2020/10/08 18:01:06 by jnakahod         ###   ########.fr       */
+/*   Updated: 2021/04/05 18:23:52 by jnakahod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 
 	if (dst == NULL && src == NULL)
 		return (NULL);
-	uc_dst = (unsigned char*)dst;
-	uc_src = (unsigned char*)src;
+	uc_dst = (unsigned char *)dst;
+	uc_src = (unsigned char *)src;
 	i = 0;
 	while (i < n)
 	{

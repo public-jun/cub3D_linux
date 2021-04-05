@@ -6,17 +6,18 @@
 /*   By: jnakahod <jnakahod@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/21 23:31:27 by jnakahod          #+#    #+#             */
-/*   Updated: 2020/10/22 16:44:53 by jnakahod         ###   ########.fr       */
+/*   Updated: 2021/04/05 18:15:58 by jnakahod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static	char	*make_ans(int num_digits, unsigned int num, int n)
+static char	*make_ans(int num_digits, unsigned int num, int n)
 {
 	char			*ans;
 
-	if (!(ans = (char*)malloc(sizeof(char) * (num_digits + 1))))
+	ans = (char *)malloc(sizeof(char) * (num_digits + 1));
+	if (ans == NULL)
 		return (NULL);
 	ans[num_digits] = '\0';
 	while (num_digits > 0)
@@ -30,7 +31,7 @@ static	char	*make_ans(int num_digits, unsigned int num, int n)
 	return (ans);
 }
 
-char			*ft_itoa(int n)
+char	*ft_itoa(int n)
 {
 	int				num_digits;
 	unsigned int	num;

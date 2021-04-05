@@ -6,7 +6,7 @@
 /*   By: jnakahod <jnakahod@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/07 21:03:55 by jnakahod          #+#    #+#             */
-/*   Updated: 2020/10/08 00:38:01 by jnakahod         ###   ########.fr       */
+/*   Updated: 2021/04/05 17:59:29 by jnakahod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	unsigned char *ptr;
+	unsigned char	*ptr;
 
 	ptr = s;
 	while (n--)

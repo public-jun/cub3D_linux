@@ -6,7 +6,7 @@
 /*   By: jnakahod <jnakahod@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/09 19:39:42 by jnakahod          #+#    #+#             */
-/*   Updated: 2020/10/10 17:50:52 by jnakahod         ###   ########.fr       */
+/*   Updated: 2021/04/05 18:24:24 by jnakahod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	const unsigned char *puc_s;
+	const unsigned char	*puc_s;
 	unsigned char		uc_c;
 
 	puc_s = s;
@@ -22,7 +22,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	while (n--)
 	{
 		if (*puc_s == uc_c)
-			return ((void*)puc_s);
+			return ((void *)puc_s);
 		puc_s++;
 	}
 	return (NULL);

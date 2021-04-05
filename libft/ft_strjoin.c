@@ -6,7 +6,7 @@
 /*   By: jnakahod <jnakahod@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/17 14:47:10 by jnakahod          #+#    #+#             */
-/*   Updated: 2020/10/18 15:59:05 by jnakahod         ###   ########.fr       */
+/*   Updated: 2021/04/05 19:17:34 by jnakahod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@ static	char	*make_ans(size_t len_s1, size_t len_s2,
 	int		i;
 
 	i = 0;
-	if (!(ans = malloc(sizeof(char) * (len_s1 + len_s2 + 1))))
+	ans = malloc(sizeof(char) * (len_s1 + len_s2 + 1));
+	if (ans == NULL)
 		return (NULL);
 	if (s1)
 	{
@@ -35,7 +36,7 @@ static	char	*make_ans(size_t len_s1, size_t len_s2,
 	return (ans);
 }
 
-char			*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char		*ans;
 	size_t		len_s1;
@@ -43,7 +44,8 @@ char			*ft_strjoin(char const *s1, char const *s2)
 
 	if (!s1 && !s2)
 	{
-		if (!(ans = malloc(1)))
+		ans = malloc(1);
+		if (ans == NULL)
 			return (NULL);
 		*ans = '\0';
 		return (ans);

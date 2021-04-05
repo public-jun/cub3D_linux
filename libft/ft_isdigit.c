@@ -6,13 +6,13 @@
 /*   By: jnakahod <jnakahod@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/15 12:06:35 by jnakahod          #+#    #+#             */
-/*   Updated: 2020/10/15 12:33:10 by jnakahod         ###   ########.fr       */
+/*   Updated: 2021/04/05 18:06:12 by jnakahod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_isdigit(int c)
+int	ft_isdigit(int c)
 {
 	if (c >= '0' && c <= '9')
 		return (1);

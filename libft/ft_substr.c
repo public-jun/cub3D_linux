@@ -6,7 +6,7 @@
 /*   By: jnakahod <jnakahod@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/15 19:29:41 by jnakahod          #+#    #+#             */
-/*   Updated: 2020/10/27 21:42:37 by jnakahod         ###   ########.fr       */
+/*   Updated: 2021/04/05 19:23:39 by jnakahod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		return (ft_calloc(1, sizeof(char)));
 	if (len > count_len - start)
 		len = count_len - start;
-	if (!(ans = malloc((sizeof(char) * len) + 1)))
+	ans = malloc((sizeof(char) * len) + 1);
+	if (ans == NULL)
 		return (NULL);
 	i = 0;
 	while (len--)

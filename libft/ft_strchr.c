@@ -6,13 +6,13 @@
 /*   By: jnakahod <jnakahod@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/12 16:56:16 by jnakahod          #+#    #+#             */
-/*   Updated: 2021/03/30 12:22:28 by jnakahod         ###   ########.fr       */
+/*   Updated: 2021/04/05 19:15:11 by jnakahod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_strchr(const char *s, int c)
+char	*ft_strchr(const char *s, int c)
 {
 	while (*s)
 	{
@@ -25,7 +25,7 @@ char		*ft_strchr(const char *s, int c)
 	return (NULL);
 }
 
-int			ft_strchr_n(const char *need, const char c)
+int	ft_strchr_n(const char *need, const char c)
 {
 	size_t	need_len;
 	int		type_index;

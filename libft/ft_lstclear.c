@@ -6,13 +6,13 @@
 /*   By: jnakahod <jnakahod@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/27 15:26:40 by jnakahod          #+#    #+#             */
-/*   Updated: 2020/10/27 21:31:35 by jnakahod         ###   ########.fr       */
+/*   Updated: 2021/04/05 18:16:48 by jnakahod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void			ft_lstclear(t_list **lst, void (*del)(void *))
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
 	t_list		*tmp;
 

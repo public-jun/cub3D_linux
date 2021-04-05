@@ -6,16 +6,16 @@
 /*   By: jnakahod <jnakahod@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/10 17:48:03 by jnakahod          #+#    #+#             */
-/*   Updated: 2020/10/29 12:26:27 by jnakahod         ###   ########.fr       */
+/*   Updated: 2021/04/05 19:01:21 by jnakahod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 
-int		ft_memcmp(const void *s1, const void *s2, size_t n)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	const unsigned char		*str1;
-	const unsigned char		*str2;
+	const unsigned char	*str1;
+	const unsigned char	*str2;
 
 	if (s1 == s2 || n == 0)
 		return (0);

@@ -6,15 +6,15 @@
 /*   By: jnakahod <jnakahod@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/26 16:07:25 by jnakahod          #+#    #+#             */
-/*   Updated: 2020/10/26 16:28:21 by jnakahod         ###   ########.fr       */
+/*   Updated: 2021/04/05 18:19:07 by jnakahod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list			*ft_lstlast(t_list *lst)
+t_list	*ft_lstlast(t_list *lst)
 {
-	t_list *tmp;
+	t_list	*tmp;
 
 	if (!lst)
 		return (NULL);

@@ -6,7 +6,7 @@
 /*   By: jnakahod <jnakahod@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/12 18:00:48 by jnakahod          #+#    #+#             */
-/*   Updated: 2020/10/12 18:09:33 by jnakahod         ###   ########.fr       */
+/*   Updated: 2021/04/05 19:18:57 by jnakahod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	const char *first_s;
+	const char	*first_s;
 
 	first_s = s;
 	while (*s)

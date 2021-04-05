@@ -6,13 +6,13 @@
 /*   By: jnakahod <jnakahod@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/26 15:39:55 by jnakahod          #+#    #+#             */
-/*   Updated: 2020/10/26 15:48:40 by jnakahod         ###   ########.fr       */
+/*   Updated: 2021/04/05 18:23:25 by jnakahod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int				ft_lstsize(t_list *lst)
+int	ft_lstsize(t_list *lst)
 {
 	int		counts;
 

@@ -6,7 +6,7 @@
 /*   By: jnakahod <jnakahod@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/22 17:16:18 by jnakahod          #+#    #+#             */
-/*   Updated: 2020/10/27 15:20:41 by jnakahod         ###   ########.fr       */
+/*   Updated: 2021/04/05 19:18:28 by jnakahod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 		return (NULL);
 	s_len = ft_strlen(s);
 	i = 0;
-	if (!(ans = malloc(sizeof(char) * (s_len + 1))))
+	ans = malloc(sizeof(char) * (s_len + 1));
+	if (ans == NULL)
 		return (NULL);
 	while (s[i])
 	{

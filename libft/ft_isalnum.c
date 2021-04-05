@@ -6,16 +6,16 @@
 /*   By: jnakahod <jnakahod@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/15 14:41:57 by jnakahod          #+#    #+#             */
-/*   Updated: 2020/10/15 16:28:28 by jnakahod         ###   ########.fr       */
+/*   Updated: 2021/04/05 18:05:02 by jnakahod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_isalnum(int c)
+int	ft_isalnum(int c)
 {
 	if ((c >= '0' && c <= '9') || (c >= 'A' && c <= 'Z')
-			|| (c >= 'a' && c <= 'z'))
+		|| (c >= 'a' && c <= 'z'))
 		return (1);
 	return (0);
 }

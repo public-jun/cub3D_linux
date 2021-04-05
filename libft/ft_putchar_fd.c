@@ -6,13 +6,13 @@
 /*   By: jnakahod <jnakahod@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/23 16:59:53 by jnakahod          #+#    #+#             */
-/*   Updated: 2021/03/30 12:23:57 by jnakahod         ###   ########.fr       */
+/*   Updated: 2021/04/05 19:04:39 by jnakahod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void		ft_putchar_fd(char c, int fd)
+void	ft_putchar_fd(char c, int fd)
 {
 	char	head;
 	char	tail;

@@ -6,7 +6,7 @@
 /*   By: jnakahod <jnakahod@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/18 16:01:36 by jnakahod          #+#    #+#             */
-/*   Updated: 2020/10/20 15:13:11 by jnakahod         ###   ########.fr       */
+/*   Updated: 2021/04/05 19:23:07 by jnakahod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,14 @@ static	char	*return_enpty(void)
 {
 	char	*ans;
 
-	if (!(ans = malloc(1)))
+	ans = malloc(1);
+	if (ans == NULL)
 		return (NULL);
 	*ans = '\0';
 	return (ans);
 }
 
-static	char	*find_ch(size_t i, char const *s1, char const *set,
+static char	*find_ch(size_t i, char const *s1, char const *set,
 						int add_back)
 {
 	int		j;
@@ -39,7 +40,7 @@ static	char	*find_ch(size_t i, char const *s1, char const *set,
 			j++;
 		}
 		if (match_flag == 0)
-			return ((char*)&s1[i]);
+			return ((char *)&s1[i]);
 		i = i + add_back;
 	}
 	return (NULL);
@@ -50,7 +51,8 @@ static	char	*make_ans(char *p_first, size_t ans_len)
 	char	*ans;
 	int		i;
 
-	if (!(ans = malloc(sizeof(char) * ans_len + 1)))
+	ans = malloc(sizeof(char) * ans_len + 1);
+	if (ans == NULL)
 		return (NULL);
 	i = 0;
 	while (ans_len--)
@@ -59,7 +61,7 @@ static	char	*make_ans(char *p_first, size_t ans_len)
 	return (ans);
 }
 
-char			*ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*p_first;
 	char	*p_last;
@@ -70,7 +72,8 @@ char			*ft_strtrim(char const *s1, char const *set)
 		return (NULL);
 	if (*s1 == '\0')
 		return (return_enpty());
-	if (!(p_first = find_ch(0, s1, set, 1)))
+	p_first = find_ch(0, s1, set, 1);
+	if (p_first == NULL)
 		return (return_enpty());
 	p_last = NULL;
 	len_s1 = ft_strlen(s1);

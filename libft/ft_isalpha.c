@@ -6,13 +6,13 @@
 /*   By: jnakahod <jnakahod@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/14 22:21:00 by jnakahod          #+#    #+#             */
-/*   Updated: 2020/10/15 14:41:35 by jnakahod         ###   ########.fr       */
+/*   Updated: 2021/04/05 18:05:16 by jnakahod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_isalpha(int c)
+int	ft_isalpha(int c)
 {
 	if (('A' <= c && c <= 'Z') || ('a' <= c && c <= 'z'))
 		return (1);

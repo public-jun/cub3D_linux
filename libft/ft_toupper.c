@@ -6,13 +6,13 @@
 /*   By: jnakahod <jnakahod@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/15 15:09:32 by jnakahod          #+#    #+#             */
-/*   Updated: 2020/10/29 12:27:54 by jnakahod         ###   ########.fr       */
+/*   Updated: 2021/04/05 19:23:58 by jnakahod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_toupper(int c)
+int	ft_toupper(int c)
 {
 	if (c >= 'a' && c <= 'z')
 		c -= 32;

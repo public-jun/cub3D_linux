@@ -6,13 +6,13 @@
 /*   By: jnakahod <jnakahod@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/15 14:48:22 by jnakahod          #+#    #+#             */
-/*   Updated: 2020/10/15 14:51:26 by jnakahod         ###   ########.fr       */
+/*   Updated: 2021/04/05 18:05:57 by jnakahod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_isascii(int c)
+int	ft_isascii(int c)
 {
 	if (c >= 0 && c <= 0177)
 		return (1);

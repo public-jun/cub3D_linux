@@ -6,7 +6,7 @@
 /*   By: jnakahod <jnakahod@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/10 23:04:30 by jnakahod          #+#    #+#             */
-/*   Updated: 2020/10/17 10:51:42 by jnakahod         ###   ########.fr       */
+/*   Updated: 2021/04/05 19:18:00 by jnakahod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	size_t i;
+	size_t	i;
 
 	if (!dst || !src)
 		return (0);

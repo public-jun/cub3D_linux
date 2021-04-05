@@ -6,13 +6,13 @@
 /*   By: jnakahod <jnakahod@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/15 16:29:44 by jnakahod          #+#    #+#             */
-/*   Updated: 2020/10/15 16:31:38 by jnakahod         ###   ########.fr       */
+/*   Updated: 2021/04/05 19:23:49 by jnakahod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_tolower(int c)
+int	ft_tolower(int c)
 {
 	if (c >= 'A' && c <= 'Z')
 		return (c += 32);

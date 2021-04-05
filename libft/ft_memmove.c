@@ -6,7 +6,7 @@
 /*   By: jnakahod <jnakahod@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/08 18:13:49 by jnakahod          #+#    #+#             */
-/*   Updated: 2020/10/23 21:12:41 by jnakahod         ###   ########.fr       */
+/*   Updated: 2021/04/05 19:04:13 by jnakahod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 
 	if (dst == NULL && src == NULL)
 		return (NULL);
-	uc_dst = (unsigned char*)dst;
-	uc_src = (unsigned char*)src;
+	uc_dst = (unsigned char *)dst;
+	uc_src = (unsigned char *)src;
 	i = 0;
 	if (uc_src < uc_dst && uc_dst <= uc_src + len)
 	{
