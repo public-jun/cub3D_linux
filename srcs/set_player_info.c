@@ -6,7 +6,7 @@
 /*   By: jnakahod <jnakahod@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 23:47:21 by jnakahod          #+#    #+#             */
-/*   Updated: 2021/03/27 16:49:11 by jnakahod         ###   ########.fr       */
+/*   Updated: 2021/04/05 15:35:57 by jnakahod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ void			ft_store_player_info(t_all *all,
 	all->player.pos_y = (double)y + 0.5;
 	all->map.p_x = x;
 	all->map.p_y = y;
-	all->info.move_speed = 0.07;
-	all->info.rot_speed = 0.07;
+	all->info.move_speed = 0.05;
+	all->info.rot_speed = 0.05;
 	ft_store_player_dir_and_plane(all, map, x, y);
 }
