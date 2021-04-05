@@ -6,7 +6,7 @@
 /*   By: jnakahod <jnakahod@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/27 18:26:50 by jnakahod          #+#    #+#             */
-/*   Updated: 2021/03/27 18:40:29 by jnakahod         ###   ########.fr       */
+/*   Updated: 2021/04/05 15:31:22 by jnakahod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,13 @@
 void			ft_set_direction_tex(t_all *all)
 {
 	if (all->ray.raydir_y > 0 && all->ray.side == 1)
-		all->tex.num = N_TEX;
-	else if (all->ray.raydir_y < 0 && all->ray.side == 1)
 		all->tex.num = S_TEX;
+	else if (all->ray.raydir_y < 0 && all->ray.side == 1)
+		all->tex.num = N_TEX;
 	else if (all->ray.raydir_x > 0 && all->ray.side == 0)
-		all->tex.num = W_TEX;
-	else if (all->ray.raydir_x < 0 && all->ray.side == 0)
 		all->tex.num = E_TEX;
+	else if (all->ray.raydir_x < 0 && all->ray.side == 0)
+		all->tex.num = W_TEX;
 	else
 		all->tex.num = -1;
 }
