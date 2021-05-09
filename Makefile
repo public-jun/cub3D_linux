@@ -6,7 +6,7 @@
 #    By: jnakahod <jnakahod@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/27 16:49:55 by jnakahod          #+#    #+#              #
-#    Updated: 2021/05/09 16:31:37 by jnakahod         ###   ########.fr        #
+#    Updated: 2021/05/09 16:50:39 by jnakahod         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,6 +29,7 @@ SRCS = srcs/cub3d.c \
 		srcs/exit.c \
 		srcs/parse_line.c \
 		srcs/parse_element.c \
+		srcs/parse_element2.c \
 		srcs/parse_map.c \
 		srcs/parse_map2.c \
 		srcs/flood_fill.c \
