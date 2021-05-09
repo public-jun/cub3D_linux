@@ -6,7 +6,7 @@
 /*   By: jnakahod <jnakahod@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/09 16:30:10 by jnakahod          #+#    #+#             */
-/*   Updated: 2021/05/09 17:34:32 by jnakahod         ###   ########.fr       */
+/*   Updated: 2021/05/09 17:36:21 by jnakahod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,6 @@ void	ft_resize_win(t_all *all)
 			all->win_r.y = all->win_r.screen_y;
 	}
 	else
-		if (400000000 < (unsigned long long)(all->win_r.x * all->win_r.y)));
+		if (400000001 < (unsigned long long)(all->win_r.x * all->win_r.y))
 			ft_put_error_and_exit(all, NULL, "too big data\n");
 }
