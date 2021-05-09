@@ -6,32 +6,33 @@
 /*   By: jnakahod <jnakahod@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/27 15:42:14 by jnakahod          #+#    #+#             */
-/*   Updated: 2021/03/27 16:13:56 by jnakahod         ###   ########.fr       */
+/*   Updated: 2021/05/09 12:30:54 by jnakahod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/cub3d.h"
 
-void			ft_set_value_for_draw_sprite(t_all *all,
-											t_sprite_info *sp_info, int *i)
+void	ft_set_value_for_draw_sprite(t_all *all,
+	t_sprite_info *sp_info, int *i)
 {
 	sp_info->spr_x = sp_info->order[*i].sp_x - all->player.pos_x;
 	sp_info->spr_y = sp_info->order[*i].sp_y - all->player.pos_y;
 	sp_info->inv_det = 1.0 / (all->player.plane_x * all->player.dir_y
-						- all->player.dir_x * all->player.plane_y);
+		- all->player.dir_x * all->player.plane_y);
 	sp_info->transform_x = sp_info->inv_det
-	* (all->player.dir_y * sp_info->spr_x - all->player.dir_x * sp_info->spr_y);
+		* (all->player.dir_y * sp_info->spr_x
+		- all->player.dir_x * sp_info->spr_y);
 	sp_info->transform_y = sp_info->inv_det
-	* (-all->player.plane_y * sp_info->spr_x
-	+ all->player.plane_x * sp_info->spr_y);
+		* (-all->player.plane_y * sp_info->spr_x
+		+ all->player.plane_x * sp_info->spr_y);
 	sp_info->spr_screen_x = (int)((all->win_r.x / 2)
-						* (1 + sp_info->transform_x / sp_info->transform_y));
+		* (1 + sp_info->transform_x / sp_info->transform_y));
 }
 
-void			ft_calc_drawing_sprite(t_all *all, t_sprite_info *sp_info)
+void	ft_calc_drawing_sprite(t_all *all, t_sprite_info *sp_info)
 {
 	sp_info->spr_height = (int)ft_abs((all->win_r.y / sp_info->transform_y)
-															/ 1.0);
+		/ 1.0);
 	sp_info->draw_start_y = -sp_info->spr_height / 2 + all->win_r.y / 2;
 	if (sp_info->draw_start_y < 0)
 		sp_info->draw_start_y = 0;
