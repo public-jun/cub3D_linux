@@ -6,13 +6,13 @@
 /*   By: jnakahod <jnakahod@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 22:19:12 by jnakahod          #+#    #+#             */
-/*   Updated: 2021/03/27 16:22:11 by jnakahod         ###   ########.fr       */
+/*   Updated: 2021/05/09 12:25:11 by jnakahod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/cub3d.h"
 
-void			ft_store_line_with_map(t_all *all, char **line)
+void	ft_store_line_with_map(t_all *all, char **line)
 {
 	int			x;
 
@@ -27,7 +27,7 @@ void			ft_store_line_with_map(t_all *all, char **line)
 	all->map.tmp_y++;
 }
 
-void			ft_judge_possible_chars(t_all *all, char **line)
+void	ft_judge_possible_chars(t_all *all, char **line)
 {
 	int			i;
 
@@ -50,7 +50,7 @@ void			ft_judge_possible_chars(t_all *all, char **line)
 	}
 }
 
-int				ft_in_the_process_of_forming_map(t_all *all, char **line)
+int	ft_in_the_process_of_forming_map(t_all *all, char **line)
 {
 	if ((*line)[0] == '\0' && all->map.cont == 0)
 		return (-1);
