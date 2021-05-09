@@ -6,16 +6,16 @@
 /*   By: jnakahod <jnakahod@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 12:22:17 by jnakahod          #+#    #+#             */
-/*   Updated: 2021/03/27 18:24:32 by jnakahod         ###   ########.fr       */
+/*   Updated: 2021/05/08 22:26:30 by jnakahod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/cub3d.h"
 
-void				ft_draw_window_to_save(t_all *all)
+void	ft_draw_window_to_save(t_all *all)
 {
-	int				x;
-	int				y;
+	int	x;
+	int	y;
 
 	y = 0;
 	while (y < all->win_r.y)
@@ -23,15 +23,15 @@ void				ft_draw_window_to_save(t_all *all)
 		x = 0;
 		while (x < all->win_r.x)
 		{
-			all->info.img.data[all->win_r.x * y + x] =
-							all->info.buf[all->win_r.y - 1 - y][x];
+			all->info.img.data[all->win_r.x * y + x]
+				= all->info.buf[all->win_r.y - 1 - y][x];
 			x++;
 		}
 		y++;
 	}
 }
 
-void				ft_write_bmp_header(t_all *all, int fd, int filesize)
+void	ft_write_bmp_header(t_all *all, int fd, int filesize)
 {
 	unsigned char	fileheader[54];
 
@@ -57,14 +57,14 @@ void				ft_write_bmp_header(t_all *all, int fd, int filesize)
 	write(fd, fileheader, 54);
 }
 
-void				ft_make_bmp(t_all *all)
+void	ft_make_bmp(t_all *all)
 {
-	int				filesize;
-	int				fd;
+	int	filesize;
+	int	fd;
 
 	filesize = 54 + (4 * all->win_r.x * all->win_r.y);
-	if ((fd = open("cub3d.bmp", O_WRONLY | O_CREAT | O_TRUNC | O_APPEND,
-					S_IRWXU)) < 0)
+	fd = open("cub3d.bmp", O_WRONLY | O_CREAT | O_TRUNC | O_APPEND, S_IRWXU);
+	if (fd < 0)
 		ft_put_error_and_exit(all, NULL, "Can't cretate bmp\n");
 	ft_write_bmp_header(all, fd, filesize);
 	write(fd, (char *)all->info.img.data, 4 * all->win_r.x * all->win_r.y);
