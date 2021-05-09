@@ -6,7 +6,7 @@
 /*   By: jnakahod <jnakahod@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/12 12:49:26 by jnakahod          #+#    #+#             */
-/*   Updated: 2021/04/02 23:42:47 by jnakahod         ###   ########.fr       */
+/*   Updated: 2021/05/09 16:55:11 by jnakahod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@
 int		main(int ac, char **av);
 void	ft_init_all(t_all *all, int ac);
 void	ft_init(t_all *all, int ac);
+void	ft_key_init(t_all *all);
+void	ft_resize_win(t_all *all);
 void	ft_free_path(t_all *all);
 int		ft_exit(t_all *all);
 void	ft_put_error_and_exit(t_all *all, char **line, char *s);
@@ -92,5 +94,6 @@ void	ft_set_direction_tex(t_all *all);
 void	ft_attach_tex_size_for_screen(t_all *all, t_tex *tex);
 void	ft_set_buf(t_all *all, int x);
 void	ft_draw_to_window(t_all *all);
+void	ft_free_and_error_exit(char **tmp, t_all *all, char **line, char *msg);
 
 #endif
