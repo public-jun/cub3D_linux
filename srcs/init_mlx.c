@@ -6,7 +6,7 @@
 /*   By: jnakahod <jnakahod@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/21 12:21:20 by jnakahod          #+#    #+#             */
-/*   Updated: 2021/05/09 16:41:41 by jnakahod         ###   ########.fr       */
+/*   Updated: 2021/05/09 16:46:43 by jnakahod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static void	ft_init_buf(t_all *all, int height, int width)
 	i = 0;
 	while (i < all->win_r.y)
 	{
-		all->info.buf[i++] = (int *)malloc(sizeof(int) * width);
+		all->info.buf[i] = (int *)malloc(sizeof(int) * width);
 		if (!all->info.buf[i++])
 			ft_put_error_and_exit(all, NULL, "Can't malloc in ft_init_buf\n");
 	}
