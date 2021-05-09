@@ -12,7 +12,7 @@
 
 #include "../includes/cub3d.h"
 
-size_t			ft_strchr_ex(char *s, int c)
+size_t	ft_strchr_ex(char *s, int c)
 {
 	size_t		i;
 

@@ -12,15 +12,15 @@
 
 #include "../includes/cub3d.h"
 
-void			ft_store_sprite_coordinate(t_all *all, int x, int y)
+void	ft_store_sprite_coordinate(t_all *all, int x, int y)
 {
 	all->sprite_info.order[all->sprite_info.tmp].sp_x = (double)x + 0.5;
 	all->sprite_info.order[all->sprite_info.tmp].sp_y = (double)y + 0.5;
 	all->sprite_info.tmp++;
 }
 
-void			ft_get_info_from_map(t_all *all,
-										char map[MAP_HEIGHT][MAP_WIDTH])
+void	ft_get_info_from_map(t_all *all,
+	char map[MAP_HEIGHT][MAP_WIDTH])
 {
 	int			x;
 	int			y;
@@ -48,7 +48,7 @@ void			ft_get_info_from_map(t_all *all,
 	}
 }
 
-void			ft_make_xy_map(t_all *all)
+void	ft_make_xy_map(t_all *all)
 {
 	int			x;
 	int			y;
@@ -66,7 +66,7 @@ void			ft_make_xy_map(t_all *all)
 	}
 }
 
-void			ft_r_map(t_all *all)
+void	ft_r_map(t_all *all)
 {
 	int			y;
 	int			x;
@@ -77,21 +77,22 @@ void			ft_r_map(t_all *all)
 		x = 0;
 		while (x < MAP_WIDTH)
 		{
-			all->map.char_r_map[y][x] =
-					all->map.char_map[MAP_HEIGHT - 1 - y][x];
+			all->map.char_r_map[y][x]
+				= all->map.char_map[MAP_HEIGHT - 1 - y][x];
 			x++;
 		}
 		y++;
 	}
 }
 
-void			ft_set_data_for_raycast(t_all *all)
+void	ft_set_data_for_raycast(t_all *all)
 {
 	ft_r_map(all);
 	if (all->sprite_info.num > 0)
 	{
-		if (!(all->sprite_info.order =
-				(t_sprite*)malloc(sizeof(t_sprite) * all->sprite_info.num)))
+		all->sprite_info.order
+			= (t_sprite*)malloc(sizeof(t_sprite) * all->sprite_info.num);
+		if (!all->sprite_info.order)
 			ft_put_error_and_exit(all, NULL, "Cant allocate memory\n");
 		if (all->sprite_info.order == NULL)
 			ft_put_error_and_exit(all, NULL, "cant malloc!\n");

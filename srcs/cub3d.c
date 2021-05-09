@@ -12,7 +12,7 @@
 
 #include "../includes/cub3d.h"
 
-void			ft_read_cub(t_all *all)
+void	ft_read_cub(t_all *all)
 {
 	int			res;
 	char		*line;
@@ -31,7 +31,7 @@ void			ft_read_cub(t_all *all)
 	free(line);
 }
 
-static int		ft_iscub(char *cub)
+static int	ft_iscub(char *cub)
 {
 	int			len;
 
@@ -45,7 +45,7 @@ static int		ft_iscub(char *cub)
 	return (0);
 }
 
-int				focus_in(t_all *all)
+int	focus_in(t_all *all)
 {
 	floor_and_ceilling_casting(all);
 	ft_wall_casting(all);
@@ -54,7 +54,7 @@ int				focus_in(t_all *all)
 	return (0);
 }
 
-int				main(int ac, char **av)
+int	main(int ac, char **av)
 {
 	t_all		all;
 	int			fd;

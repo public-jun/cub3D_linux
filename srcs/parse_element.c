@@ -12,13 +12,14 @@
 
 #include "../includes/cub3d.h"
 
-void				ft_parse_line_r(t_all *all, char **line)
+void	ft_parse_line_r(t_all *all, char **line)
 {
 	char			**tmp;
 
 	if (all->flag.r == 1)
 		ft_put_error_and_exit(all, line, "Set only one R\n");
-	if (!(tmp = ft_split(*line, ' ')))
+	tmp = ft_split(*line, ' ');
+	if (!tmp)
 		ft_put_error_and_exit(all, line, "Invalid R format\n");
 	if (ft_count_contents(tmp) != 3)
 	{
@@ -41,8 +42,8 @@ void				ft_parse_line_r(t_all *all, char **line)
 	all->flag.r = 1;
 }
 
-void				ft_parse_line_path(t_all *all, char **path,
-										int *flag, char **line)
+void	ft_parse_line_path(t_all *all, char **path,
+	int *flag, char **line)
 {
 	char			*res;
 	char			**tmp;
@@ -51,7 +52,8 @@ void				ft_parse_line_path(t_all *all, char **path,
 	res = NULL;
 	if (*flag == 1)
 		ft_put_error_and_exit(all, line, "Set only one each path\n");
-	if (!(tmp = ft_split(*line, ' ')))
+	tmp = ft_split(*line, ' ');
+	if (!tmp)
 		ft_put_error_and_exit(all, line, "Invalid path format\n");
 	if ((ft_count_contents(tmp) != 2) || !(res = ft_strdup(tmp[1])))
 	{
@@ -65,7 +67,7 @@ void				ft_parse_line_path(t_all *all, char **path,
 	*flag = 1;
 }
 
-static void			ft_input_rgb(t_all *all, char **line,
+static void	ft_input_rgb(t_all *all, char **line,
 									t_color *color, char **char_rgb)
 {
 	if ((ft_is_all_num(char_rgb[R]) >= 0)
@@ -80,7 +82,7 @@ static void			ft_input_rgb(t_all *all, char **line,
 	{
 		ft_free_all(char_rgb);
 		ft_put_error_and_exit(all, line,
-					"Contains non-numeric characters or Invalid num\n");
+			"Contains non-numeric characters or Invalid num\n");
 	}
 	if (color->r < 0 || color->g < 0 || color->b < 0
 		|| 255 < color->r || 255 < color->g || 255 < color->b)
@@ -90,7 +92,7 @@ static void			ft_input_rgb(t_all *all, char **line,
 	}
 }
 
-static int			ft_count_comma(char *dst)
+static int	ft_count_comma(char *dst)
 {
 	int				res;
 	int				i;
@@ -106,7 +108,7 @@ static int			ft_count_comma(char *dst)
 	return (res);
 }
 
-void				ft_parse_line_color(t_all *all, t_color *color,
+void	ft_parse_line_color(t_all *all, t_color *color,
 										int *flag, char **line)
 {
 	char			**char_rgb;

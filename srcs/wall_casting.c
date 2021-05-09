@@ -12,13 +12,13 @@
 
 #include "../includes/cub3d.h"
 
-void			ft_set_ray_data(t_all *all, int x)
+void	ft_set_ray_data(t_all *all, int x)
 {
 	all->ray.camera_x = 2 * x / (double)all->win_r.x - 1;
 	all->ray.raydir_x = all->player.dir_x + all->player.plane_x
-							* all->ray.camera_x;
+		* all->ray.camera_x;
 	all->ray.raydir_y = all->player.dir_y + all->player.plane_y
-							* all->ray.camera_x;
+		* all->ray.camera_x;
 	all->ray.map_x = (int)all->player.pos_x;
 	all->ray.map_y = (int)all->player.pos_y;
 	all->ray.deltadist_x = ft_abs(1 / all->ray.raydir_x);
@@ -26,35 +26,35 @@ void			ft_set_ray_data(t_all *all, int x)
 	all->ray.hit = 0;
 }
 
-void			ft_check_raydir_and_set_sidedist(t_all *all)
+void	ft_check_raydir_and_set_sidedist(t_all *all)
 {
 	if (all->ray.raydir_x < 0)
 	{
 		all->ray.step_x = -1;
 		all->ray.sidedist_x = (all->player.pos_x - all->ray.map_x)
-									* all->ray.deltadist_x;
+			* all->ray.deltadist_x;
 	}
 	else
 	{
 		all->ray.step_x = 1;
 		all->ray.sidedist_x = (all->ray.map_x + 1.0 - all->player.pos_x)
-									* all->ray.deltadist_x;
+			* all->ray.deltadist_x;
 	}
 	if (all->ray.raydir_y < 0)
 	{
 		all->ray.step_y = -1;
 		all->ray.sidedist_y = (all->player.pos_y - all->ray.map_y)
-									* all->ray.deltadist_y;
+			* all->ray.deltadist_y;
 	}
 	else
 	{
 		all->ray.step_y = 1;
 		all->ray.sidedist_y = (all->ray.map_y + 1.0 - all->player.pos_y)
-									* all->ray.deltadist_y;
+			* all->ray.deltadist_y;
 	}
 }
 
-void			ft_find_collision_with_wall(t_all *all)
+void	ft_find_collision_with_wall(t_all *all)
 {
 	while (all->ray.hit == 0)
 	{
@@ -75,13 +75,13 @@ void			ft_find_collision_with_wall(t_all *all)
 	}
 	if (all->ray.side == 0)
 		all->ray.prepwalldist = (all->ray.map_x - all->player.pos_x
-							+ (1 - all->ray.step_x) / 2) / all->ray.raydir_x;
+				+ (1 - all->ray.step_x) / 2) / all->ray.raydir_x;
 	else
 		all->ray.prepwalldist = (all->ray.map_y - all->player.pos_y
-							+ (1 - all->ray.step_y) / 2) / all->ray.raydir_y;
+				+ (1 - all->ray.step_y) / 2) / all->ray.raydir_y;
 }
 
-void			ft_calculate_wall_height_on_screen(t_all *all)
+void	ft_calculate_wall_height_on_screen(t_all *all)
 {
 	all->ray.lineheight = (int)(all->win_r.y / all->ray.prepwalldist);
 	all->ray.drawstart = -all->ray.lineheight / 2 + all->win_r.y / 2;
@@ -92,7 +92,7 @@ void			ft_calculate_wall_height_on_screen(t_all *all)
 		all->ray.drawend = all->win_r.y - 1;
 }
 
-void			ft_wall_casting(t_all *all)
+void	ft_wall_casting(t_all *all)
 {
 	int			x;
 

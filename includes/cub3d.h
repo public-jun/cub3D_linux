@@ -66,7 +66,7 @@ void	ft_load_texture(t_all *all);
 int		ft_min(int a, int b);
 double	ft_abs(double d);
 double	ft_floor(double value);
-void	loor_and_ceilling_casting(t_all *all);
+void	floor_and_ceilling_casting(t_all *all);
 void	ft_wall_casting(t_all *all);
 void	ft_sprite_casting(t_all *all);
 int		ft_raycasting(t_all *all);

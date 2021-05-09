@@ -12,7 +12,7 @@
 
 #include "../includes/cub3d.h"
 
-int				ft_count_contents(char **dst)
+int	ft_count_contents(char **dst)
 {
 	int			res;
 
