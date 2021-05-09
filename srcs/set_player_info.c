@@ -12,20 +12,20 @@
 
 #include "../includes/cub3d.h"
 
-void			ft_set_dir(t_all *all, double dir_x, double dir_y)
+void	ft_set_dir(t_all *all, double dir_x, double dir_y)
 {
 	all->player.dir_x = dir_x;
 	all->player.dir_y = dir_y;
 }
 
-void			ft_set_plane(t_all *all, double plane_x, double plane_y)
+void	ft_set_plane(t_all *all, double plane_x, double plane_y)
 {
 	all->player.plane_x = plane_x;
 	all->player.plane_y = plane_y;
 }
 
-void			ft_store_player_dir_and_plane(t_all *all,
-								char map[MAP_HEIGHT][MAP_WIDTH], int x, int y)
+void	ft_store_player_dir_and_plane(t_all *all,
+	char map[MAP_HEIGHT][MAP_WIDTH], int x, int y)
 {
 	if (map[y][x] == 'N')
 	{
@@ -49,8 +49,8 @@ void			ft_store_player_dir_and_plane(t_all *all,
 	}
 }
 
-void			ft_store_player_info(t_all *all,
-							char map[MAP_HEIGHT][MAP_WIDTH], int x, int y)
+void	ft_store_player_info(t_all *all,
+	char map[MAP_HEIGHT][MAP_WIDTH], int x, int y)
 {
 	all->player.pos_x = (double)x + 0.5;
 	all->player.pos_y = (double)y + 0.5;

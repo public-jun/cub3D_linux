@@ -12,7 +12,7 @@
 
 #include "../includes/cub3d.h"
 
-int				ft_flag_on_expect_map(t_all *all)
+int	ft_flag_on_expect_map(t_all *all)
 {
 	if (all->flag.r == 1 && all->flag.no == 1 && all->flag.so == 1
 		&& all->flag.we == 1 && all->flag.ea == 1 && all->flag.s == 1
@@ -22,7 +22,7 @@ int				ft_flag_on_expect_map(t_all *all)
 		return (0);
 }
 
-int				ft_skip_null_and_space(char **line, int *i)
+int	ft_skip_null_and_space(char **line, int *i)
 {
 	if (!(*line)[*i])
 		return (-1);
@@ -33,7 +33,7 @@ int				ft_skip_null_and_space(char **line, int *i)
 	return (0);
 }
 
-void			ft_judge_element(t_all *all, char **line, int *i)
+void	ft_judge_element(t_all *all, char **line, int *i)
 {
 	if ((*line)[*i] == 'R' && (*line)[*i + 1] == ' ')
 		ft_parse_line_r(all, line);
@@ -57,7 +57,7 @@ void			ft_judge_element(t_all *all, char **line, int *i)
 		ft_parse_line_color(all, &all->color_c, &all->flag.c, line);
 }
 
-void			ft_parse_line_param(t_all *all, char **line)
+void	ft_parse_line_param(t_all *all, char **line)
 {
 	int			i;
 
@@ -76,7 +76,7 @@ void			ft_parse_line_param(t_all *all, char **line)
 	ft_judge_element(all, line, &i);
 }
 
-void			ft_parse_line(t_all *all, char **line)
+void	ft_parse_line(t_all *all, char **line)
 {
 	if (all->map.cont < 0 && (*line)[0] != '\0')
 		ft_put_error_and_exit(all, line, "map is not end\n");

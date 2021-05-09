@@ -12,7 +12,7 @@
 
 #include "../includes/cub3d.h"
 
-void			ft_set_sprite_distance(t_all *all, t_sprite *order)
+void	ft_set_sprite_distance(t_all *all, t_sprite *order)
 {
 	int			i;
 
@@ -28,7 +28,7 @@ void			ft_set_sprite_distance(t_all *all, t_sprite *order)
 	}
 }
 
-void			ft_sort_sprites(t_sprite_info *sp_info)
+void	ft_sort_sprites(t_sprite_info *sp_info)
 {
 	t_sprite	tmp;
 	int			i;
@@ -52,7 +52,7 @@ void			ft_sort_sprites(t_sprite_info *sp_info)
 	}
 }
 
-void			ft_sprite_casting(t_all *all)
+void	ft_sprite_casting(t_all *all)
 {
 	int			i;
 

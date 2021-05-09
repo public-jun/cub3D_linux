@@ -12,7 +12,7 @@
 
 #include "../includes/cub3d.h"
 
-void			ft_count_sprite(t_all *all, char **line)
+void	ft_count_sprite(t_all *all, char **line)
 {
 	int			i;
 
@@ -25,7 +25,7 @@ void			ft_count_sprite(t_all *all, char **line)
 	}
 }
 
-void			ft_parse_line_map(t_all *all, char **line)
+void	ft_parse_line_map(t_all *all, char **line)
 {
 	if (ft_in_the_process_of_forming_map(all, line) >= 0)
 	{

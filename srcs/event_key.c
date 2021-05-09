@@ -12,7 +12,7 @@
 
 #include "../includes/cub3d.h"
 
-int				key_press(int key, t_all *all)
+int	key_press(int key, t_all *all)
 {
 	if (key == K_ESC)
 		ft_exit(all);

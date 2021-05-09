@@ -12,7 +12,7 @@
 
 #include "../includes/cub3d.h"
 
-void			ft_draw_to_window(t_all *all)
+void	ft_draw_to_window(t_all *all)
 {
 	int			x;
 	int			y;
@@ -23,17 +23,17 @@ void			ft_draw_to_window(t_all *all)
 		x = 0;
 		while (x < all->win_r.x)
 		{
-			all->info.img.data[(all->info.img.size_l / (all->info.img.bpp / 8))
-											* y + x] = all->info.buf[y][x];
+			all->info.img.data[(all->info.img.size_l
+					/ (all->info.img.bpp / 8)) *y + x] = all->info.buf[y][x];
 			x++;
 		}
 		y++;
 	}
 	mlx_put_image_to_window(all->info.mlx, all->info.win,
-								all->info.img.img_ptr, 0, 0);
+		all->info.img.img_ptr, 0, 0);
 }
 
-int				ft_raycasting(t_all *all)
+int	ft_raycasting(t_all *all)
 {
 	floor_and_ceilling_casting(all);
 	ft_wall_casting(all);

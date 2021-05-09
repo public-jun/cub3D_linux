@@ -12,8 +12,8 @@
 
 #include "../includes/cub3d.h"
 
-void			ft_flood_fill(t_all *all,
-								char map[MAP_HEIGHT][MAP_WIDTH], int x, int y)
+void	ft_flood_fill(t_all *all,
+	char map[MAP_HEIGHT][MAP_WIDTH], int x, int y)
 {
 	char		node;
 

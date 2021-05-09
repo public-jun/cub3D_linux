@@ -12,7 +12,7 @@
 
 #include "../includes/cub3d.h"
 
-void			floor_and_ceilling_casting(t_all *all)
+void	floor_and_ceilling_casting(t_all *all)
 {
 	int			x;
 	int			y;

@@ -71,7 +71,7 @@ void	ft_make_bmp(t_all *all)
 	close(fd);
 }
 
-void				ft_write_bmp(t_all *all)
+void	ft_write_bmp(t_all *all)
 {
 	floor_and_ceilling_casting(all);
 	ft_wall_casting(all);

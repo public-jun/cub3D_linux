@@ -12,7 +12,7 @@
 
 #include "../includes/cub3d.h"
 
-int			ft_is_all_num(char *num)
+int	ft_is_all_num(char *num)
 {
 	int		len;
 	int		i;
@@ -29,7 +29,7 @@ int			ft_is_all_num(char *num)
 	return (-1);
 }
 
-int			ft_min(int a, int b)
+int	ft_min(int a, int b)
 {
 	if (a > b)
 		return (b);
@@ -37,14 +37,14 @@ int			ft_min(int a, int b)
 		return (a);
 }
 
-double		ft_abs(double d)
+double	ft_abs(double d)
 {
 	if (d < 0)
 		return (-d);
 	return (d);
 }
 
-double		ft_decimals(double value)
+double	ft_decimals(double value)
 {
 	double	ret_decimals;
 
@@ -52,7 +52,7 @@ double		ft_decimals(double value)
 	return (ret_decimals);
 }
 
-double		ft_floor(double value)
+double	ft_floor(double value)
 {
 	double	ret_int;
 

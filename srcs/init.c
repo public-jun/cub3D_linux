@@ -12,7 +12,7 @@
 
 #include "../includes/cub3d.h"
 
-static void			ft_init_char_map(t_all *all)
+static void	ft_init_char_map(t_all *all)
 {
 	int			x;
 	int			y;
@@ -33,7 +33,7 @@ static void			ft_init_char_map(t_all *all)
 	}
 }
 
-static void			ft_init_int_map(t_all *all)
+static void	ft_init_int_map(t_all *all)
 {
 	int			x;
 	int			y;
@@ -51,7 +51,7 @@ static void			ft_init_int_map(t_all *all)
 	}
 }
 
-void				ft_init_all(t_all *all, int ac)
+void	ft_init_all(t_all *all, int ac)
 {
 	ft_init_t_flag(all);
 	ft_init_t_win_r(all);
@@ -64,7 +64,7 @@ void				ft_init_all(t_all *all, int ac)
 		all->save = 0;
 }
 
-void				ft_init(t_all *all, int ac)
+void	ft_init(t_all *all, int ac)
 {
 	ft_init_all(all, ac);
 	ft_init_char_map(all);

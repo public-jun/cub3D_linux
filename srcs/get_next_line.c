@@ -12,14 +12,15 @@
 
 #include "../includes/cub3d.h"
 
-static char			*make_join(size_t len_s1, size_t len_s2,
-							char const *s1, char const *s2)
+static char	*make_join(size_t len_s1, size_t len_s2,
+	char const *s1, char const *s2)
 {
 	char			*ans;
 	int				i;
 
 	i = 0;
-	if (!(ans = malloc(sizeof(char) * (len_s1 + len_s2 + 1))))
+	ans = malloc(sizeof(char) * (len_s1 + len_s2 + 1));
+	if (!ans)
 		return (NULL);
 	if (s1)
 	{
@@ -35,7 +36,7 @@ static char			*make_join(size_t len_s1, size_t len_s2,
 	return (ans);
 }
 
-char				*ft_strjoin_n(char *s1, char *s2, size_t n)
+char	*ft_strjoin_n(char *s1, char *s2, size_t n)
 {
 	char			*ans;
 	size_t			len_s1;
@@ -43,7 +44,8 @@ char				*ft_strjoin_n(char *s1, char *s2, size_t n)
 
 	if (!s1 && !s2)
 	{
-		if (!(ans = malloc(1)))
+		ans = malloc(1);
+		if (!ans)
 			return (NULL);
 		*ans = '\0';
 		return (ans);
@@ -56,21 +58,23 @@ char				*ft_strjoin_n(char *s1, char *s2, size_t n)
 	return (make_join(len_s1, len_s2, s1, s2));
 }
 
-int					put_line(char **line, char **save, char *buf)
+int	put_line(char **line, char **save, char *buf)
 {
 	int				flag;
 	size_t			n;
 	char			*tmp;
 
 	n = ft_strchr_ex(buf, '\n');
-	if (!(tmp = ft_strjoin_n(*line, buf, n)))
+	tmp = ft_strjoin_n(*line, buf, n);
+	if (!tmp)
 		return (-1);
 	free_set(line, tmp);
 	tmp = NULL;
 	flag = 0;
 	if (n > 0)
 	{
-		if (!(tmp = ft_strdup(buf + n)))
+		tmp = ft_strdup(buf + n);
+		if (!tmp)
 			return (-1);
 		flag = 1;
 	}
@@ -79,19 +83,26 @@ int					put_line(char **line, char **save, char *buf)
 	return (flag);
 }
 
-int					fd_read(int *flag, int fd, char **line, char **save)
+int	fd_read(int *flag, int fd, char **line, char **save)
 {
 	char			*buf;
 	ssize_t			read_size;
 
 	read_size = 0;
-	if (!(buf = malloc(sizeof(char) * ((size_t)BUFFER_SIZE + 1))))
+	buf = malloc(sizeof(char) * ((size_t)BUFFER_SIZE + 1));
+	if (!buf)
 		*flag = -1;
 	buf[0] = '\0';
-	while (*flag == 0 && (read_size = read(fd, buf, BUFFER_SIZE)) > 0)
+	while (*flag == 0)
 	{
-		buf[read_size] = '\0';
-		*flag = put_line(line, save, buf);
+		read_size = read(fd, buf, BUFFER_SIZE);
+		if (read_size > 0)
+		{
+			buf[read_size] = '\0';
+			*flag = put_line(line, save, buf);
+		}
+		else
+			break ;
 	}
 	if (read_size < 0)
 		*flag = -1;
@@ -99,7 +110,7 @@ int					fd_read(int *flag, int fd, char **line, char **save)
 	return (*flag);
 }
 
-int					get_next_line(int fd, char **line)
+int	get_next_line(int fd, char **line)
 {
 	static char		*save;
 	int				flag;

@@ -12,7 +12,7 @@
 
 #include "../includes/cub3d.h"
 
-void			ft_init_t_flag(t_all *all)
+void	ft_init_t_flag(t_all *all)
 {
 	all->flag.eflag = 0;
 	all->flag.r = 0;
@@ -27,7 +27,7 @@ void			ft_init_t_flag(t_all *all)
 	all->flag.mlx_start = 0;
 }
 
-void			ft_init_t_win_r(t_all *all)
+void	ft_init_t_win_r(t_all *all)
 {
 	all->win_r.x = 0;
 	all->win_r.y = 0;
@@ -35,7 +35,7 @@ void			ft_init_t_win_r(t_all *all)
 	all->win_r.screen_y = 0;
 }
 
-void			ft_init_t_path(t_all *all)
+void	ft_init_t_path(t_all *all)
 {
 	all->path_tex.north = NULL;
 	all->path_tex.south = NULL;
@@ -44,7 +44,7 @@ void			ft_init_t_path(t_all *all)
 	all->path_tex.sprite = NULL;
 }
 
-void			ft_init_t_map(t_all *all)
+void	ft_init_t_map(t_all *all)
 {
 	all->map.pflag = 0;
 	all->map.cont = 0;
@@ -53,7 +53,7 @@ void			ft_init_t_map(t_all *all)
 	all->map.p_y = 0;
 }
 
-void			ft_init_t_info(t_all *all)
+void	ft_init_t_info(t_all *all)
 {
 	all->sprite_info.num = 0;
 	all->sprite_info.order = NULL;
