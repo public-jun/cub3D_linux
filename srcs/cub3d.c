@@ -6,7 +6,7 @@
 /*   By: jnakahod <jnakahod@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/09 21:03:09 by jnakahod          #+#    #+#             */
-/*   Updated: 2021/04/02 18:03:23 by jnakahod         ###   ########.fr       */
+/*   Updated: 2021/05/09 16:11:50 by jnakahod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,16 @@ void	ft_read_cub(t_all *all)
 
 	line = NULL;
 	res = 0;
-	while ((res = get_next_line(all->fd, &line)) > 0)
+	while (1)
 	{
-		ft_parse_line(all, &line);
-		free(line);
+		res = get_next_line(all->fd, &line);
+		if (res > 0)
+		{
+			ft_parse_line(all, &line);
+			free(line);
+		}
+		else
+			break ;
 	}
 	if (res == 0 && all->flag.except_map == 0)
 		ft_put_error_and_exit(all, &line, "This cub file is insufficient\n");
@@ -64,7 +70,8 @@ int	main(int ac, char **av)
 		|| (ac == 3 && ft_iscub(av[1]) && !ft_strncmp(av[2], "--save", 7)))
 	{
 		ft_init(&all, ac);
-		if ((all.fd = open(av[1], O_RDONLY)) < 0)
+		all.fd = open(av[1], O_RDONLY);
+		if (all.fd < 0)
 			ft_put_error_and_exit(&all, NULL, "Failed to open\n");
 		ft_read_cub(&all);
 		ft_set_data_for_raycast(&all);
