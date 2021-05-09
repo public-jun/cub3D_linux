@@ -6,7 +6,7 @@
 /*   By: jnakahod <jnakahod@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 21:46:38 by jnakahod          #+#    #+#             */
-/*   Updated: 2021/05/09 16:54:55 by jnakahod         ###   ########.fr       */
+/*   Updated: 2021/05/09 17:06:20 by jnakahod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,22 +22,14 @@ void	ft_parse_line_r(t_all *all, char **line)
 	if (!tmp)
 		ft_put_error_and_exit(all, line, "Invalid R format\n");
 	if (ft_count_contents(tmp) != 3)
-	{
 		ft_free_and_error_exit(tmp, all, line, "Invalid R format\n");
-		// ft_free_all(tmp);
-		// ft_put_error_and_exit(all, line, "Invalid R format\n");
-	}
 	if ((ft_is_all_num(tmp[1]) >= 0) && (ft_is_all_num(tmp[2]) >= 0))
 	{
 		all->win_r.x = ft_atoi_ex(tmp[1]);
 		all->win_r.y = ft_atoi_ex(tmp[2]);
 	}
 	else
-	{
 		ft_free_and_error_exit(tmp, all, line, "Invalid R format\n");
-		// ft_free_all(tmp);
-		// ft_put_error_and_exit(all, line, "Invalid R format\n");
-	}
 	ft_free_all(tmp);
 	if (all->win_r.x < 1 || all->win_r.y < 1)
 		ft_put_error_and_exit(all, line, "Invalid value\n");
@@ -57,11 +49,11 @@ void	ft_parse_line_path(t_all *all, char **path,
 	tmp = ft_split(*line, ' ');
 	if (!tmp)
 		ft_put_error_and_exit(all, line, "Invalid path format\n");
-	if ((ft_count_contents(tmp) != 2) || !(res = ft_strdup(tmp[1])))
-	{
-		ft_free_all(tmp);
-		ft_put_error_and_exit(all, line, "Invalid path format\n");
-	}
+	if (ft_count_contents(tmp) != 2)
+		ft_free_and_error_exit(tmp, all, line, "Invalid path format\n");
+	res = ft_strdup(tmp[1]);
+	if (!res)
+		ft_free_and_error_exit(tmp, all, line, "Invalid path format\n");
 	ft_free_all(tmp);
 	*path = res;
 	if (res[0] != '.' || res[1] != '/')
@@ -81,17 +73,11 @@ static void	ft_input_rgb(t_all *all, char **line,
 		color->b = ft_atoi_ex(char_rgb[B]);
 	}
 	else
-	{
-		ft_free_all(char_rgb);
-		ft_put_error_and_exit(all, line,
+		ft_free_and_error_exit(char_rgb, all, line,
 			"Contains non-numeric characters or Invalid num\n");
-	}
 	if (color->r < 0 || color->g < 0 || color->b < 0
 		|| 255 < color->r || 255 < color->g || 255 < color->b)
-	{
-		ft_free_all(char_rgb);
-		ft_put_error_and_exit(all, line, "Invalid value\n");
-	}
+		ft_free_and_error_exit(char_rgb, all, line, "Invalid value\n");
 }
 
 static int	ft_count_comma(char *dst)
@@ -119,13 +105,14 @@ void	ft_parse_line_color(t_all *all, t_color *color,
 	if (*flag == 1)
 		ft_put_error_and_exit(all, line, "Set only one each color\n");
 	tmp = NULL;
-	if (!(tmp = ft_split(*line, ' ')))
+	tmp = ft_split(*line, ' ');
+	if (!tmp)
 		ft_put_error_and_exit(all, line, "Invalid rgb format\n");
-	if ((ft_count_contents(tmp) != 2) || !(char_rgb = ft_split(tmp[1], ',')))
-	{
-		ft_free_all(tmp);
-		ft_put_error_and_exit(all, line, "Invalid rgb format\n");
-	}
+	if (ft_count_contents(tmp) != 2)
+		ft_free_and_error_exit(tmp, all, line, "Invalid rgb format\n");
+	char_rgb = ft_split(tmp[1], ',');
+	if (!char_rgb)
+		ft_free_and_error_exit(tmp, all, line, "Invalid rgb format\n");
 	if (ft_count_comma(tmp[1]) > 2 || ft_count_contents(char_rgb) != 3)
 	{
 		ft_free_all(tmp);
