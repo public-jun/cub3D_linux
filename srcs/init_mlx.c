@@ -48,7 +48,7 @@ static void		ft_init_buf(t_all *all, int height, int width)
 
 void			ft_resize_win(t_all *all)
 {
-	if (all->save = 0)
+	if (all->save == 0)
 	{
 		if (all->win_r.x > all->win_r.screen_x)
 			all->win_r.x = all->win_r.screen_x;
