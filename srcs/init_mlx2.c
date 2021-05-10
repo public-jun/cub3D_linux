@@ -34,7 +34,7 @@ void	ft_resize_win(t_all *all)
 	}
 	else
 	{
-		if (400000001 < (unsigned long long)(all->win_r.x * all->win_r.y))
+		if (20001 < all->win_r.x || 20001 < all->win_r.y)
 			ft_put_error_and_exit(all, NULL, "too big data\n");
 	}
 }
