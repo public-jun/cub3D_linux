@@ -33,6 +33,8 @@ void	ft_resize_win(t_all *all)
 			all->win_r.y = all->win_r.screen_y;
 	}
 	else
+	{
 		if (400000001 < (unsigned long long)(all->win_r.x * all->win_r.y))
 			ft_put_error_and_exit(all, NULL, "too big data\n");
+	}
 }
