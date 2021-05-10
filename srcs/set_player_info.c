@@ -56,7 +56,7 @@ void	ft_store_player_info(t_all *all,
 	all->player.pos_y = (double)y + 0.5;
 	all->map.p_x = x;
 	all->map.p_y = y;
-	all->info.move_speed = 0.06;
+	all->info.move_speed = 0.0677;
 	all->info.rot_speed = 0.05;
 	ft_store_player_dir_and_plane(all, map, x, y);
 }
