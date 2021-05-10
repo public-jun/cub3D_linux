@@ -49,7 +49,7 @@ void	ft_init_texture_and_zbuffer(t_all *all)
 		all->info.texture[i++] = NULL;
 	all->sprite_info.zbuffer = (double *)malloc(sizeof(double) * all->win_r.x);
 	if (!all->sprite_info.zbuffer)
-		ft_put_error_and_exit(all, NULL, "cant malloc in ft_init_zbuffer");
+		ft_put_error_and_exit(all, NULL, "cant malloc in ft_init_zbuffer\n");
 	i = 0;
 	while (i < all->win_r.x)
 		all->sprite_info.zbuffer[i++] = 0;
